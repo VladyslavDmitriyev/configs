@@ -1,1 +1,10 @@
-/Users/vlad/.vimrc
+packadd! dracula
+syntax enable
+colorscheme dracula
+set number
+set tabstop=4
+set autoindent
+set expandtab
+set softtabstop=4
+set cursorline
+set statusline+=%F
