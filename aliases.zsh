@@ -18,6 +18,14 @@ alias notes-code="code ~/notes/notes.md"
 alias vim-config-code="code ~/.vimrc"
 alias tmux-config-code="code ~/.tmux.conf"
 
+# Manjaro
+alias pacman-search="pacman -Ss"
+alias pacman-search-installed="pacman -Qs"
+alias pacman-ls-installed="pacman -Ql"
+alias pacman-update="sudo pacman -Syu"
+alias pacman-install="sudo pacman -Syu"
+alias pacman-uninstall="sudo pacman -Rns"
+
 # Connect to Raspberry Pi
 alias sshpi="ssh $PI_PATH"
 
