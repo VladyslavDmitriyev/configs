@@ -1,10 +1,8 @@
 # Configs
 Repository to store config files
 
-## Create symlinks from the repo
+## Backup existing files and create symlinks from the repo
+Creates `~/config-backups` dir and stores all files
 ```bash
-ln -s ~/configs/.zshrc ~/.zshrc;
-ln -s ~/configs/.tmux.conf ~/.tmux.conf;
-ln -s ~/configs/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh;
-ln -s ~/configs/.vimrc ~/.vimrc
+./backup_and_make_links.sh
 ```
