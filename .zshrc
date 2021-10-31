@@ -15,6 +15,9 @@ export TERM=xterm-256color
 # export TERM=screen-256color
 # export TERM=screen-256color-bce
 
+# Random
+export current_datetime=`date +"%d-%m-%Y-%H-%M-%S"`
+
 # WORK
 export APP_LEADER="com.katans.leader"
 export APP_CALLS="ai.sync.call"

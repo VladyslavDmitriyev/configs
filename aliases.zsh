@@ -1,6 +1,6 @@
 # Aliases
 
-# General
+# Configs
 alias zsh-reload="exec zsh && source ~/.zshrc"
 alias tmux-reload="tmux source ~/.tmux.conf"
 
@@ -10,7 +10,7 @@ alias notes="vim ~/notes/notes.md"
 alias vim-config="vim ~/.vimrc"
 alias tmux-config="vim ~/.tmux.conf"
 
-# Open in code
+## Open in code
 alias zsh-config-code="code ~/.zshrc"
 alias zsh-aliases-code="code $ZSH_CUSTOM/aliases.zsh"
 alias scripts-code="code ~/bin"
