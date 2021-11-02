@@ -26,6 +26,9 @@ alias pacman-update="sudo pacman -Syu"
 alias pacman-install="sudo pacman -Syu"
 alias pacman-uninstall="sudo pacman -Rns"
 
+# Python
+alias python=/usr/local/bin/python3
+
 # Connect to Raspberry Pi
 alias sshpi="ssh $PI_PATH"
 
