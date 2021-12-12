@@ -1,30 +1,21 @@
 # Aliases
 
+# System
+alias system-show-space="df -h"
+alias system-update="sudo pacman -Syu && yay"
+
 # Configs
 alias zsh-reload="exec zsh && source ~/.zshrc"
 alias tmux-reload="tmux source ~/.tmux.conf"
-
-alias zsh-config="vim ~/.zshrc"
-alias zsh-aliases="vim $ZSH_CUSTOM/aliases.zsh"
-alias notes="vim ~/notes/notes.md"
-alias vim-config="vim ~/.vimrc"
-alias tmux-config="vim ~/.tmux.conf"
-
-## Open in code
-alias zsh-config-code="code ~/.zshrc"
-alias zsh-aliases-code="code $ZSH_CUSTOM/aliases.zsh"
-alias scripts-code="code ~/bin"
-alias notes-code="code ~/notes/notes.md"
-alias vim-config-code="code ~/.vimrc"
-alias tmux-config-code="code ~/.tmux.conf"
+alias zsh-config="code ~/configs/."
 
 # Manjaro
 alias pacman-search="pacman -Ss"
 alias pacman-search-installed="pacman -Qs"
-alias pacman-ls-installed="pacman -Ql"
-alias pacman-update="sudo pacman -Syu"
+alias pacman-ls-installed="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
 alias pacman-install="sudo pacman -Syu"
 alias pacman-uninstall="sudo pacman -Rns"
+alias pacman-freeup-space="sudo pacman -Sc && sudo pacman -Qdt && sudo pacman -Rns $(pacman -Qtdq) && sudo journalctl --vacuum-size=50M"
 
 # Python
 alias python=/usr/local/bin/python3
