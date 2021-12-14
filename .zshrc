@@ -19,6 +19,8 @@ export TERM=xterm-256color
 export current_datetime=`date +"%d-%m-%Y-%H-%M-%S"`
 
 # WORK
+export BASE_URL_LEADER_PROD="https://leader.net/"
+export BASE_URL_LEADER_STAGE="https://leader-assistant.fr.sync.ai/"
 export APP_LEADER="com.katans.leader"
 export APP_CALLS="ai.sync.call"
 export APP_CALENDAR="me.sync.syncai"

@@ -39,5 +39,6 @@ alias android-uninstall="adb shell pm uninstall"
 alias android-logs-open="code ~/logs"
 alias android-enable-debug-firebase-for="adb shell setprop debug.firebase.analytics.app"
 alias android-disable-debug-firebase="adb shell setprop debug.firebase.analytics.app .none."
+alias android-all-contacts-count="adb shell content query --uri content://com.android.contacts/contacts | wc -l"
 ## LEADer
 alias android-leader-install-oldver="adb install ~/Docs/apk/LEADer_old_store_debug.apk"
