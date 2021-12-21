@@ -19,6 +19,17 @@ export TERM=xterm-256color
 export current_datetime=`date +"%d-%m-%Y-%H-%M-%S"`
 
 # WORK
+export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_SDK_ROOT=~/Library/Android/sdk
+export JAVA_HOME=/usr/local/opt/openjdk@8
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/build-tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/tools/lib/x86_64
+
+
 export BASE_URL_LEADER_PROD="https://leader.net/"
 export BASE_URL_LEADER_STAGE="https://leader-assistant.fr.sync.ai/"
 export APP_LEADER="com.katans.leader"
@@ -135,3 +146,4 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
