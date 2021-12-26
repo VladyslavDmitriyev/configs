@@ -1,22 +1,24 @@
 # Aliases
 
-# General
+# System
+alias system-show-space="df -h"
+alias system-update="sudo pacman -Syu && yay"
+
+# Configs
 alias zsh-reload="exec zsh && source ~/.zshrc"
 alias tmux-reload="tmux source ~/.tmux.conf"
+alias zsh-config="code ~/configs/."
 
-alias zsh-config="vim ~/.zshrc"
-alias zsh-aliases="vim $ZSH_CUSTOM/aliases.zsh"
-alias notes="vim ~/notes/notes.md"
-alias vim-config="vim ~/.vimrc"
-alias tmux-config="vim ~/.tmux.conf"
+# Manjaro
+alias pacman-search="pacman -Ss"
+alias pacman-search-installed="pacman -Qs"
+alias pacman-ls-installed="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
+alias pacman-install="sudo pacman -Syu"
+alias pacman-uninstall="sudo pacman -Rns"
+alias pacman-freeup-space="sudo pacman -Sc && sudo pacman -Qdt && sudo pacman -Rns $(pacman -Qtdq) && sudo journalctl --vacuum-size=50M"
 
-# Open in code
-alias zsh-config-code="code ~/.zshrc"
-alias zsh-aliases-code="code $ZSH_CUSTOM/aliases.zsh"
-alias scripts-code="code ~/bin"
-alias notes-code="code ~/notes/notes.md"
-alias vim-config-code="code ~/.vimrc"
-alias tmux-config-code="code ~/.tmux.conf"
+# Python
+alias python=/usr/local/bin/python3
 
 # Connect to Raspberry Pi
 alias sshpi="ssh $PI_PATH"
@@ -37,5 +39,6 @@ alias android-uninstall="adb shell pm uninstall"
 alias android-logs-open="code ~/logs"
 alias android-enable-debug-firebase-for="adb shell setprop debug.firebase.analytics.app"
 alias android-disable-debug-firebase="adb shell setprop debug.firebase.analytics.app .none."
+alias android-all-contacts-count="adb shell content query --uri content://com.android.contacts/contacts | wc -l"
 ## LEADer
 alias android-leader-install-oldver="adb install ~/Docs/apk/LEADer_old_store_debug.apk"
