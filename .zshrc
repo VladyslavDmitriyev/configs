@@ -18,10 +18,19 @@ export TERM=xterm-256color
 # Random
 export current_datetime=`date +"%d-%m-%Y-%H-%M-%S"`
 
+if [[ $OS -eq "Linux" ]]
+then
+    export JAVA_HOME=/usr/lib/jvm/default
+    export ANDROID_HOME=~/AndroidSDK
+    export ANDROID_SDK_ROOT=~/AndroidSDK
+elif [[ $OS -eq "MAC" ]]
+then
+    export JAVA_HOME=/usr/local/opt/openjdk@8
+    export ANDROID_HOME=~/Library/Android/sdk
+    export ANDROID_SDK_ROOT=~/Library/Android/sdk
+fi
+
 # WORK
-export ANDROID_HOME=~/Library/Android/sdk
-export ANDROID_SDK_ROOT=~/Library/Android/sdk
-export JAVA_HOME=/usr/local/opt/openjdk@8
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -147,3 +156,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

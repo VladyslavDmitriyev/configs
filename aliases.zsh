@@ -2,7 +2,11 @@
 
 # System
 alias system-show-space="df -h"
-alias system-update="sudo pacman -Syu && yay"
+alias system-show-space-ncdu="sudo ncdu /"
+alias system-show-my-ip="ip add | grep -o \"inet 192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?\" | grep -o \"192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?\""
+alias system-freeup-space="sudo pacman -Sc && sudo pacman -Qdt && sudo pacman -Rns $(pacman -Qtdq) && sudo journalctl --vacuum-size=50M && yay -Scc && sudo paccache -rvk0"
+alias system-update="sudo pacman -Syu && yay && flatpak upgrade"
+
 
 # Configs
 alias zsh-reload="exec zsh && source ~/.zshrc"
@@ -15,7 +19,16 @@ alias pacman-search-installed="pacman -Qs"
 alias pacman-ls-installed="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
 alias pacman-install="sudo pacman -Syu"
 alias pacman-uninstall="sudo pacman -Rns"
-alias pacman-freeup-space="sudo pacman -Sc && sudo pacman -Qdt && sudo pacman -Rns $(pacman -Qtdq) && sudo journalctl --vacuum-size=50M"
+
+# VPN
+## Wireguard
+alias vpn-connect-pi="wg-quick up wg0"
+alias vpn-disconnect-pi="wg-quick down wg0"
+
+# Docker
+alias docker-show-used-spase="docker system df"
+alias docker-remove-all-stopped-containers="docker container prune"
+alias docker-remove-all-images="docker image rm $(docker image ls -q)"
 
 # Python
 alias python=/usr/local/bin/python3
