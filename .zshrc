@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/bin:$PATH"
@@ -18,16 +20,18 @@ export TERM=xterm-256color
 # Random
 export current_datetime=`date +"%d-%m-%Y-%H-%M-%S"`
 
-if [[ $OS -eq "Linux" ]]
+if [[ $OS == "Linux" ]]
 then
     export JAVA_HOME=/usr/lib/jvm/default
     export ANDROID_HOME=~/AndroidSDK
     export ANDROID_SDK_ROOT=~/AndroidSDK
-elif [[ $OS -eq "MAC" ]]
+    echo $OS "variables exported"
+elif [[ $OS == "OSX" ]]
 then
     export JAVA_HOME=/usr/local/opt/openjdk@8
     export ANDROID_HOME=~/Library/Android/sdk
     export ANDROID_SDK_ROOT=~/Library/Android/sdk
+    echo $OS "variables exported"
 fi
 
 # WORK
