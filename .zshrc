@@ -28,11 +28,22 @@ then
     echo $OS "variables exported"
 elif [[ $OS == "OSX" ]]
 then
-    export JAVA_HOME=/usr/local/opt/openjdk@8
+    export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_312` #/usr/local/opt/openjdk@8
     export ANDROID_HOME=~/Library/Android/sdk
     export ANDROID_SDK_ROOT=~/Library/Android/sdk
     echo $OS "variables exported"
+
+    if [[ `uname -m` == "arm64" ]]
+    then
+        export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_312`
+        echo "JAVA_HOME for" `uname -m` "was exported"
+    else
+        export JAVA_HOME=/usr/local/opt/openjdk@8
+        echo "JAVA_HOME for Intel was exported"
+    fi
 fi
+
+
 
 # WORK
 export PATH=$PATH:$ANDROID_HOME/emulator
