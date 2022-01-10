@@ -43,8 +43,6 @@ then
     fi
 fi
 
-
-
 # WORK
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
