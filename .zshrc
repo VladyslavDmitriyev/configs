@@ -38,7 +38,7 @@ then
         export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_312`
         echo "JAVA_HOME for" `uname -m` "was exported"
     else
-        export JAVA_HOME=/usr/local/opt/openjdk@8
+        export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_312`
         echo "JAVA_HOME for Intel was exported"
     fi
 fi
