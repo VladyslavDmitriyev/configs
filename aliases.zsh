@@ -65,5 +65,16 @@ alias android-logs-open="code ~/logs"
 alias android-enable-debug-firebase-for="adb shell setprop debug.firebase.analytics.app"
 alias android-disable-debug-firebase="adb shell setprop debug.firebase.analytics.app .none."
 alias android-all-contacts-count="adb shell content query --uri content://com.android.contacts/contacts | wc -l"
+
+android-connect-adb-wifi() {
+    adb kill-server;
+    sleep 2;
+    echo `adb devices | grep -o "^................[[:space:]]"`;
+    adb -s `adb devices | grep -o "^................[[:space:]]"` tcpip 5555;
+    sleep 2;
+    echo `adb shell ip addr show wlan0 | grep -o "inet 192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?" | grep -o "192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?"`;
+    adb connect `adb shell ip addr show wlan0 | grep -o "inet 192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?" | grep -o "192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?"`:5555;
+}
+
 ## LEADer
 alias android-leader-install-oldver="adb install ~/Docs/apk/LEADer_old_store_debug.apk"
