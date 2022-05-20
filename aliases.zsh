@@ -69,8 +69,8 @@ alias android-all-contacts-count="adb shell content query --uri content://com.an
 android-connect-adb-wifi() {
     adb kill-server;
     sleep 1;
-    echo `adb devices | egrep -o "^([a-z]\w*|[0-9]\w*)\W"`;
-    adb -s `adb devices | egrep -o "^([a-z]\w*|[0-9]\w*)\W"` tcpip 5555;
+    echo `adb devices | egrep -o "^((.*[0-9]+)[a-zA-Z]+.*\W)|((.*[a-zA-Z]+)[0-9]+.*\W)"`;
+    adb -s `adb devices | egrep -o "^((.*[0-9]+)[a-zA-Z]+.*\W)|((.*[a-zA-Z]+)[0-9]+.*\W)"` tcpip 5555;
     sleep 1;
     echo `adb shell ip addr show wlan0 | grep -o "inet 192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?" | grep -o "192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?"`;
     adb connect `adb shell ip addr show wlan0 | grep -o "inet 192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?" | grep -o "192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?"`:5555;
