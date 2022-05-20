@@ -37,6 +37,7 @@ then
     then
         export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_312`
         echo "JAVA_HOME for" `uname -m` "was exported"
+        export PATH="$PATH:/Users/vlad/dev/flutter/bin"
     else
         export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_312`
         echo "JAVA_HOME for Intel was exported"

@@ -56,7 +56,14 @@ alias vnc-ls="ps -ef | grep \"Xvnc-core \:.\""
 alias vnc-rm="zsh $ZSH_CUSTOM/scripts/vnc-rm.sh"
 
 # WORK 
-alias android-screen="scrcpy --turn-screen-off -m 1024"
+function android-screen() {
+    if [ -z "$1" ]
+    then 
+        scrcpy --turn-screen-off -m 1024
+    else 
+        scrcpy --turn-screen-off -m 1024 -s "$1"
+    fi
+}
 alias android-list-apps="adb shell 'pm list packages -f' | sed -e 's/.*=//' | sort"
 alias android-focused-app="adb shell dumpsys window windows | grep -E 'mFocusedApp'| cut -d / -f 1 | cut -d '"' '"' -f 7"
 alias android-clear-cache="adb shell pm clear"
@@ -65,8 +72,9 @@ alias android-logs-open="code ~/logs"
 alias android-enable-debug-firebase-for="adb shell setprop debug.firebase.analytics.app"
 alias android-disable-debug-firebase="adb shell setprop debug.firebase.analytics.app .none."
 alias android-all-contacts-count="adb shell content query --uri content://com.android.contacts/contacts | wc -l"
+alias android-12-emulator="emulator -avd Pixel_4_API_32 -qemu -no-audio"
 
-android-connect-adb-wifi() {
+function android-connect-adb-wifi() {
     adb kill-server;
     sleep 1;
     echo `adb devices | egrep -o "^((.*[0-9]+)[a-zA-Z]+.*\W)|((.*[a-zA-Z]+)[0-9]+.*\W)"`;
