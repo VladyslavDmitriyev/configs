@@ -1,16 +1,17 @@
 #!/bin/zsh
 
 date_dir=`date +"%d-%m-%Y-%H-%M-%S"`
-mkdir -p ~/config-backups/$date_dir;
+date_dir_path="$HOME/config-backups/$date_dir"
+mkdir -p $date_dir_path;
+mkdir -p $TMUXDOTDIR;
 
-mv ~/.zshrc ~/config-backups/$date_dir/.zshrc;
-ln -s ~/configs/.zshrc ~/.zshrc;
+cp -a $HOME/.zshenv $date_dir_path;
+cp -a $HOME/.config/. $date_dir_path;
 
-mv ~/.tmux.conf ~/config-backups/$date_dir/.tmux.conf;
-ln -s ~/configs/.tmux.conf ~/.tmux.conf;
-
-mv ~/.oh-my-zsh/custom/aliases.zsh ~/config-backups/$date_dir/aliases.zsh;
-ln -s ~/configs/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh;
-
-mv ~/.vimrc ~/config-backups/$date_dir/.vimrc;
-ln -s ~/configs/.vimrc ~/.vimrc;
+ln -s ~/configs/zsh/.zshenv ~/.zshenv;
+ln -s ~/configs/vim/.vimrc ~/.vimrc;
+ln -s ~/configs/tmux/tmux.conf $TMUXDOTDIR/tmux.conf;
+ln -s ~/configs/zsh/.zshrc $ZDOTDIR/.zshrc;
+ln -s ~/configs/zsh/aliases.zsh $ZDOTDIR/aliases.zsh;
+ln -s ~/configs/zsh/completion.zsh $ZDOTDIR/completion.zsh;
+ln -s ~/configs/zsh/prompt_setup $ZDOTDIR/prompt_setup;
