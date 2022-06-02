@@ -1,9 +1,1 @@
-*
-
-!.gitignore
-!.tmux.conf
-!.vimrc
-!.zshrc
-!README.md
-!aliases.zsh
-!backup_and_make_links.sh
+backup
