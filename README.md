@@ -19,3 +19,15 @@ Zsh read these files in the following order:
 ```bash
 source ~/.zshenv && source $ZDOTDIR/.zshrc
 ```
+
+## Install syntax highlighting
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  
+
+mkdir $ZDOTDIR/plugins  
+
+mv zsh-syntax-highlighting $ZDOTDIR/plugins/zsh-syntax-highlighting
+```
+## Tmux 
+Install plugins
+Press prefix + I(capital i, as in Install) to fetch the plugin.

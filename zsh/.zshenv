@@ -4,16 +4,14 @@
 # EXPORT ENVIRONMENT VARIABLE #
 ###############################
 
-eval $(/opt/homebrew/bin/brew shellenv)
-
 case "$OSTYPE" in
-  solaris*) OS="SOLARIS" ;;
-  darwin*)  OS="OSX" ;; 
-  linux*)   OS="LINUX" ;;
-  bsd*)     OS="BSD" ;;
-  msys*)    OS="WINDOWS" ;;
-  cygwin*)  OS="ALSO WINDOWS" ;;
-  *)        OS="unknown: $OSTYPE" ;;
+    solaris*) OS="SOLARIS" ;;
+    darwin*)  OS="OSX" ;; 
+    linux*)   OS="LINUX" ;;
+    bsd*)     OS="BSD" ;;
+    msys*)    OS="WINDOWS" ;;
+    cygwin*)  OS="ALSO WINDOWS" ;;
+    *)        OS="unknown: $OSTYPE" ;;
 esac
 
 # XDG
@@ -49,6 +47,7 @@ then
 
     if [[ `uname -m` == "arm64" ]]
     then
+        eval $(/opt/homebrew/bin/brew shellenv)
         export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_312`
         echo "JAVA_HOME for" `uname -m` "was exported"
         export PATH="$PATH:/Users/vlad/dev/flutter/bin"
