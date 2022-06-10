@@ -1,3 +1,10 @@
+# Load secrets
+if [ -f $ZDOTDIR/.secrets ]; then
+    source $ZDOTDIR/.secrets
+else
+    print "404: $ZDOTDIR/.secrets not found."
+fi
+
 source $ZDOTDIR/aliases.zsh
 
 autoload -U compinit; compinit

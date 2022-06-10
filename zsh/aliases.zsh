@@ -33,6 +33,10 @@ alias zsh-reload="source ~/.zshenv && source $ZDOTDIR/.zshrc"
 alias tmux-reload="tmux source $XDG_CONFIG_HOME/tmux/tmux.conf"
 alias zsh-config="code ~/configs/."
 
+# SSH
+## VPS
+alias sshvps="ssh $VPS_USER@$VPS_IP"
+
 # VPN
 ## Wireguard
 alias vpn-connect-pi="wg-quick up wg0"
