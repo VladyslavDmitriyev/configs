@@ -1,6 +1,11 @@
 # Configs
 Repository to store config files
 
+## Clone the repository
+```bash
+git clone https://github.com/VladyslavDmitriyev/configs
+```
+
 ## Backup existing files and create symlinks from the repo
 Creates `~/config-backups` dir and stores all files  
 ```bash
@@ -29,5 +34,11 @@ mkdir $ZDOTDIR/plugins
 mv zsh-syntax-highlighting $ZDOTDIR/plugins/zsh-syntax-highlighting
 ```
 ## Tmux 
+Install plugin manager
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source $TMUXDOTDIR/tmux.conf
+```
+
 Install plugins
 Press prefix + I(capital i, as in Install) to fetch the plugin.

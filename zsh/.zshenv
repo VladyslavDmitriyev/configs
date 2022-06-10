@@ -64,10 +64,3 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/build-tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/tools/lib/x86_64
-
-export BASE_URL_LEADER_PROD="https://leader.net/"
-export BASE_URL_LEADER_STAGE="https://leader-assistant.fr.sync.ai/"
-export APP_LEADER="com.katans.leader"
-export APP_CALLS="ai.sync.call"
-export APP_CALENDAR="me.sync.syncai"
-export APP_DRUPE="mobi.drupe.app"
