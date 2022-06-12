@@ -4,6 +4,8 @@
 # EXPORT ENVIRONMENT VARIABLE #
 ###############################
 
+export PATH=$PATH:~/bin
+
 case "$OSTYPE" in
     solaris*) OS="SOLARIS" ;;
     darwin*)  OS="OSX" ;; 
