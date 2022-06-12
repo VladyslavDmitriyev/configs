@@ -5,6 +5,7 @@ else
     print "404: $ZDOTDIR/.secrets not found."
 fi
 
+source $TMUXDOTDIR/tmux.conf
 source $ZDOTDIR/aliases.zsh
 
 autoload -U compinit; compinit
