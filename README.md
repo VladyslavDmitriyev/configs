@@ -1,4 +1,9 @@
 # Configs
+Install zsh and make it default
+```bash
+chsh -s $(which zsh)
+```
+
 Repository to store config files
 
 ## Clone the repository
@@ -20,11 +25,6 @@ Zsh read these files in the following order:
 `.zlogin` - Same purpose than `.zprofile`, but read just after `.zshrc`.
 `.zlogout` - Can be used to execute commands when a shell exit.
 
-
-```bash
-source ~/.zshenv && source $ZDOTDIR/.zshrc
-```
-
 ## Install syntax highlighting
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  
@@ -33,6 +33,12 @@ mkdir $ZDOTDIR/plugins
 
 mv zsh-syntax-highlighting $ZDOTDIR/plugins/zsh-syntax-highlighting
 ```
+
+Reload configs
+```bash
+source ~/.zshenv && source $ZDOTDIR/.zshrc
+```
+
 ## Tmux 
 Install plugin manager
 ```bash

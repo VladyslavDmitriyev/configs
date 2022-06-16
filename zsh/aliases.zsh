@@ -35,7 +35,8 @@ alias zsh-config="code ~/configs/."
 
 # SSH
 ## VPS
-alias sshvps="ssh $VPS_USER@$VPS_IP"
+alias ssh-wirehole="ssh $DO_WIREHOLE_USER@$DO_WIREHOLE_IP"
+alias ssh-vps="ssh $VPS_USER@$VPS_IP"
 
 # VPN
 ## Wireguard
@@ -97,7 +98,8 @@ alias android-logs-open="code ~/logs"
 alias android-enable-debug-firebase-for="adb shell setprop debug.firebase.analytics.app"
 alias android-disable-debug-firebase="adb shell setprop debug.firebase.analytics.app .none."
 alias android-all-contacts-count="adb shell content query --uri content://com.android.contacts/contacts | wc -l"
-alias android-12-emulator="emulator -avd Pixel_4_API_32 -qemu -no-audio"
+alias android-emulators-launch-Pixel_4_API_32="emulator -avd Pixel_4_API_32 -qemu -no-audio"
+alias android-emulators-list="emulator -list-avds"
 
 function android-connect-adb-wifi() {
     adb kill-server;
