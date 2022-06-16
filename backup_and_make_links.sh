@@ -36,3 +36,13 @@ mv zsh-syntax-highlighting $ZDOTDIR/plugins/zsh-syntax-highlighting
 # install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source $TMUXDOTDIR/tmux.conf
+
+# create secrets config
+ls $ZDOTDIR/.secrets
+if [[ "$?" == 0 ]]
+then
+    echo "Secrets file exists"
+else
+    echo "Creating secrets file"
+    touch $ZDOTDIR/.secrets
+fi
