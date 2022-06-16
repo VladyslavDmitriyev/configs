@@ -29,9 +29,9 @@ ln -s ~/configs/zsh/completion.zsh $ZDOTDIR/completion.zsh;
 ln -s ~/configs/zsh/prompt_setup $ZDOTDIR/prompt_setup;
 
 # install syntax highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  ~/zsh-syntax-highlighting
 mkdir $ZDOTDIR/plugins  
-mv zsh-syntax-highlighting $ZDOTDIR/plugins/zsh-syntax-highlighting
+mv ~/zsh-syntax-highlighting $ZDOTDIR/plugins/zsh-syntax-highlighting
 
 # install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

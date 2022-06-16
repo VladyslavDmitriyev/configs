@@ -27,11 +27,11 @@ Zsh read these files in the following order:
 
 ## Install syntax highlighting
 ```bash
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  ~/zsh-syntax-highlighting
 
 mkdir $ZDOTDIR/plugins  
 
-mv zsh-syntax-highlighting $ZDOTDIR/plugins/zsh-syntax-highlighting
+mv ~/zsh-syntax-highlighting $ZDOTDIR/plugins/zsh-syntax-highlighting
 ```
 
 Reload configs
