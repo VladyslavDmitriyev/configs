@@ -34,7 +34,6 @@ alias tmux-reload="tmux source $XDG_CONFIG_HOME/tmux/tmux.conf"
 alias zsh-config="code ~/configs/."
 
 # SSH
-## VPS
 alias ssh-wirehole="ssh $DO_WIREHOLE_USER@$DO_WIREHOLE_IP"
 alias ssh-vps="ssh $VPS_USER@$VPS_IP"
 
@@ -67,6 +66,29 @@ alias docker-show-used-spase="docker system df"
 alias docker-remove-all-stopped-containers="docker container prune"
 alias docker-remove-all-images="docker image prune -a"
 alias docker-remove-all-cache="docker builder prune -a"
+
+# Tmux
+function tmux-attach() {
+    tmux ls
+    is_session=$?
+
+    echo "Enter session name: "
+    read session
+
+    if [[ "$is_session" == 0 ]]
+    then
+        tmux attach -t $session
+    else
+        tmux new -s $session
+    fi
+}
+
+function tmux-new-session() {
+    tmux ls
+    echo "Enter session name: "
+    read session
+    tmux new -s $session
+}
 
 # Python
 alias python=/usr/local/bin/python3
