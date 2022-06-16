@@ -34,6 +34,7 @@ alias tmux-reload="tmux source $XDG_CONFIG_HOME/tmux/tmux.conf"
 alias zsh-config="code ~/configs/."
 
 # SSH
+alias ssh-ubuntu="ssh $DO_UBUNTU_USER@$DO_UBUNTU_IP"
 alias ssh-wirehole="ssh $DO_WIREHOLE_USER@$DO_WIREHOLE_IP"
 alias ssh-vps="ssh $VPS_USER@$VPS_IP"
 
