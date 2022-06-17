@@ -9,7 +9,7 @@ alias system-show-my-ip-ifconfig="ifconfig | grep -o \"inet 192.168.[0-9][0-9]\?
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
-if [[ $OS == "Linux" ]]
+if [[ $OS == "LINUX" ]]
 then
     # Manjaro
     alias system-freeup-space="sudo pacman -Sc && sudo pacman -Qdt && sudo pacman -Rns $(pacman -Qtdq) && sudo journalctl --vacuum-size=50M && yay -Scc && sudo paccache -rvk0"
