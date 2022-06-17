@@ -12,7 +12,7 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 if [[ $OS == "LINUX" ]]
 then
     # Manjaro
-    where pacman
+    where pacman > /dev/null
     if [[ "$?" == 0 ]]
     then
         alias system-update="sudo pacman -Syu && yay && flatpak upgrade"
