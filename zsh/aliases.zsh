@@ -12,13 +12,16 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 if [[ $OS == "LINUX" ]]
 then
     # Manjaro
-    alias system-freeup-space="sudo pacman -Sc && sudo pacman -Qdt && sudo pacman -Rns $(pacman -Qtdq) && sudo journalctl --vacuum-size=50M && yay -Scc && sudo paccache -rvk0"
-    alias system-update="sudo pacman -Syu && yay && flatpak upgrade"
-    alias pacman-search="pacman -Ss"
-    alias pacman-search-installed="pacman -Qs"
-    alias pacman-ls-installed="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
-    alias pacman-install="sudo pacman -Syu"
-    alias pacman-uninstall="sudo pacman -Rns"
+    where pacman
+    if [[ "$?" == 0 ]]
+    then
+        alias system-update="sudo pacman -Syu && yay && flatpak upgrade"
+        alias pacman-search="pacman -Ss"
+        alias pacman-search-installed="pacman -Qs"
+        alias pacman-ls-installed="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
+        alias pacman-install="sudo pacman -Syu"
+        alias pacman-uninstall="sudo pacman -Rns"
+    fi
 
     echo $OS "aliases loaded"
 elif [[ $OS == "OSX" ]]
