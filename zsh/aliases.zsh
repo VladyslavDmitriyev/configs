@@ -25,10 +25,8 @@ then
 
     echo $OS "aliases loaded"
 elif [[ $OS == "OSX" ]]
-
-    echo $OS "aliases loaded"
 then
-
+    echo $OS "aliases loaded"
 fi
 
 # Configs

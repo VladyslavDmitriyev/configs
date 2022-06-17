@@ -20,8 +20,8 @@ esac
 
 if [[ $OS = "LINUX" ]]
 then
-    export EDITOR=`where micro`
-    export VISUAL=`where micro`
+    export EDITOR=`where micro | head -1`
+    export VISUAL=`where micro | head -1`
 
     export JAVA_HOME=/usr/lib/jvm/default
     export ANDROID_HOME=~/AndroidSDK
@@ -29,8 +29,8 @@ then
     echo $OS "variables exported"
 elif [[ $OS = "OSX" ]]
 then
-    export EDITOR=`where code`
-    export VISUAL=`where code`
+    export EDITOR=`where code | head -1`
+    export VISUAL=`where code | head -1`
 
     export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_312` #/usr/local/opt/openjdk@8
     export ANDROID_HOME=~/Library/Android/sdk
