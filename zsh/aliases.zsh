@@ -32,7 +32,7 @@ fi
 alias zsh-reload="source ~/.zshenv && source $ZDOTDIR/.zshrc"
 alias tmux-reload="tmux source $XDG_CONFIG_HOME/tmux/tmux.conf"
 alias zsh-config="code ~/configs/."
-alias secrets="open -t $ZDOTDIR/.secrets"
+alias secrets="$EDITOR $ZDOTDIR/.secrets"
 
 # SSH
 alias ssh-ubuntu="ssh $DO_UBUNTU_USER@$DO_UBUNTU_IP"

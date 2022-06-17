@@ -31,7 +31,7 @@ export SECRETS_PATH="~/.config/zsh/.secrets"
 # other software
 export TMUXDOTDIR="$XDG_CONFIG_HOME/tmux"
 
-if [[ $OS == "Linux" ]]
+if [[ $OS = "Linux" ]]
 then
     export EDITOR=`where micro`
     export VISUAL=`where micro`
@@ -40,7 +40,7 @@ then
     export ANDROID_HOME=~/AndroidSDK
     export ANDROID_SDK_ROOT=~/AndroidSDK
     echo $OS "variables exported"
-elif [[ $OS == "OSX" ]]
+elif [[ $OS = "OSX" ]]
 then
     export EDITOR=`where code`
     export VISUAL=`where code`
