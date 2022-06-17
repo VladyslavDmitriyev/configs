@@ -28,21 +28,23 @@ export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
 export SECRETS_PATH="~/.config/zsh/.secrets"
 
-# editor
-export EDITOR="code"
-export VISUAL="code"
-
 # other software
 export TMUXDOTDIR="$XDG_CONFIG_HOME/tmux"
 
 if [[ $OS == "Linux" ]]
 then
+    export EDITOR=`where micro`
+    export VISUAL=`where micro`
+
     export JAVA_HOME=/usr/lib/jvm/default
     export ANDROID_HOME=~/AndroidSDK
     export ANDROID_SDK_ROOT=~/AndroidSDK
     echo $OS "variables exported"
 elif [[ $OS == "OSX" ]]
 then
+    export EDITOR=`where code`
+    export VISUAL=`where code`
+
     export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_312` #/usr/local/opt/openjdk@8
     export ANDROID_HOME=~/Library/Android/sdk
     export ANDROID_SDK_ROOT=~/Library/Android/sdk
