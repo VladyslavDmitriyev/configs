@@ -9,29 +9,31 @@ alias system-show-my-ip-ifconfig="ifconfig | grep -o \"inet 192.168.[0-9][0-9]\?
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
-if [[ $OS == "Linux" ]]
+if [[ $OS == "LINUX" ]]
 then
     # Manjaro
-    alias system-freeup-space="sudo pacman -Sc && sudo pacman -Qdt && sudo pacman -Rns $(pacman -Qtdq) && sudo journalctl --vacuum-size=50M && yay -Scc && sudo paccache -rvk0"
-    alias system-update="sudo pacman -Syu && yay && flatpak upgrade"
-    alias pacman-search="pacman -Ss"
-    alias pacman-search-installed="pacman -Qs"
-    alias pacman-ls-installed="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
-    alias pacman-install="sudo pacman -Syu"
-    alias pacman-uninstall="sudo pacman -Rns"
+    where pacman > /dev/null
+    if [[ "$?" == 0 ]]
+    then
+        alias system-update="sudo pacman -Syu && yay && flatpak upgrade"
+        alias pacman-search="pacman -Ss"
+        alias pacman-search-installed="pacman -Qs"
+        alias pacman-ls-installed="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
+        alias pacman-install="sudo pacman -Syu"
+        alias pacman-uninstall="sudo pacman -Rns"
+    fi
 
     echo $OS "aliases loaded"
 elif [[ $OS == "OSX" ]]
-
-    echo $OS "aliases loaded"
 then
-
+    echo $OS "aliases loaded"
 fi
 
 # Configs
 alias zsh-reload="source ~/.zshenv && source $ZDOTDIR/.zshrc"
 alias tmux-reload="tmux source $XDG_CONFIG_HOME/tmux/tmux.conf"
 alias zsh-config="code ~/configs/."
+alias secrets="$EDITOR $ZDOTDIR/.secrets"
 
 # SSH
 alias ssh-ubuntu="ssh $DO_UBUNTU_USER@$DO_UBUNTU_IP"
