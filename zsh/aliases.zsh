@@ -2,9 +2,11 @@
 
 # System
 alias system-show-space="df -h"
+alias system-show-space-home="df -hT /home"
+alias system-show-space-current-dir="du -k * | sort -nr | cut -f2 | xargs -d '\n' du -sh"
 alias system-show-space-ncdu="sudo ncdu /"
-alias system-show-my-ip="ip add | grep -o \"inet 192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?\" | grep -o \"192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?\""
-alias system-show-my-ip-ifconfig="ifconfig | grep -o \"inet 192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?\" | grep -o \"192.168.[0-9][0-9]\?[0-9]\?.[0-9][0-9]\?[0-9]\?\""
+alias system-show-my-ip="ip --brief address show"
+alias system-show-my-ip-ifconfig="ifconfig | grep \"inet \" | grep -v 127.0.0.1 | cut -d\  -f2"
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
