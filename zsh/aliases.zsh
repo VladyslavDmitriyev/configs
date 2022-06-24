@@ -17,7 +17,7 @@ then
     where pacman > /dev/null
     if [[ "$?" == 0 ]]
     then
-        alias system-update="sudo pacman -Syu && yay && flatpak upgrade"
+        alias manjaro-system-update="sudo pacman -Syu && yay && flatpak upgrade"
         alias pacman-search="pacman -Ss"
         alias pacman-search-installed="pacman -Qs"
         alias pacman-ls-installed="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
