@@ -23,6 +23,7 @@ then
         alias pacman-ls-installed="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
         alias pacman-install="sudo pacman -Syu"
         alias pacman-uninstall="sudo pacman -Rns"
+        echo "Manjaro aliases loaded"
     fi
 
     echo $OS "aliases loaded"
