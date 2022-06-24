@@ -38,6 +38,7 @@ alias zsh-config="code ~/configs/."
 alias secrets="$EDITOR $ZDOTDIR/.secrets"
 
 # SSH
+alias ssh-pi="ssh $PI_USER@$PI_IP"
 alias ssh-ubuntu="ssh $DO_UBUNTU_USER@$DO_UBUNTU_IP"
 alias ssh-wirehole="ssh $DO_WIREHOLE_USER@$DO_WIREHOLE_IP"
 alias ssh-vps="ssh $VPS_USER@$VPS_IP"
@@ -97,9 +98,6 @@ function tmux-new-session() {
 
 # Python
 alias python=/usr/local/bin/python3
-
-# Connect to Raspberry Pi
-alias sshpi="ssh $PI_PATH"
 
 # VNC
 alias vnc-ipad="vncserver -randr=1440x1080"
