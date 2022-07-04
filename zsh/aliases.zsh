@@ -39,7 +39,8 @@ alias zsh-config="code ~/configs/."
 alias secrets="$EDITOR $ZDOTDIR/.secrets"
 
 # SSH
-alias ssh-pi="ssh $PI_USER@$PI_IP"
+alias ssh-pi-vpn="ssh $PI_USER@$PI_IP_VPN"
+alias ssh-pi-local="ssh $PI_USER@$PI_IP_LOCAL"
 alias ssh-ubuntu="ssh $DO_UBUNTU_USER@$DO_UBUNTU_IP"
 alias ssh-wirehole="ssh $DO_WIREHOLE_USER@$DO_WIREHOLE_IP"
 alias ssh-vps="ssh $VPS_USER@$VPS_IP"
