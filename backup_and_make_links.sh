@@ -46,6 +46,7 @@ fi
 # make links
 cp -s $HOME/configs/bin/* $HOME/bin;
 cp -s $HOME/configs/zsh/* $ZDOTDIR;
+cp -s $HOME/configs/zsh/.zshrc $ZDOTDIR;
 cp -s $HOME/configs/tmux/* $TMUXDOTDIR;
 
 # install syntax highlighting
